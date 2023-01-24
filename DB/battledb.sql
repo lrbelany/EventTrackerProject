@@ -16,11 +16,11 @@ CREATE SCHEMA IF NOT EXISTS `battledb` DEFAULT CHARACTER SET utf8 ;
 USE `battledb` ;
 
 -- -----------------------------------------------------
--- Table `batte`
+-- Table `battle`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `batte` ;
+DROP TABLE IF EXISTS `battle` ;
 
-CREATE TABLE IF NOT EXISTS `batte` (
+CREATE TABLE IF NOT EXISTS `battle` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `location` VARCHAR(45) NULL,
   `win` TINYINT NULL,
@@ -41,11 +41,11 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
--- Data for table `batte`
+-- Data for table `battle`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `battledb`;
-INSERT INTO `batte` (`id`, `location`, `win`, `mvp`, `points`) VALUES (1, 'paradise plaza', NULL, NULL, NULL);
+INSERT INTO `battle` (`id`, `location`, `win`, `mvp`, `points`) VALUES (1, 'paradise plaza', NULL, NULL, NULL);
 
 COMMIT;
 
