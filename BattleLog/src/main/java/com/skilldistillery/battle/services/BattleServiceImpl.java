@@ -1,6 +1,7 @@
 package com.skilldistillery.battle.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,26 +25,58 @@ public class BattleServiceImpl implements BattleService {
 
 	@Override
 	public Battle findBattleById(int battleId) {
-		// TODO Auto-generated method stub
-		return null;
+		Optional<Battle> battleOpt = battleresp.findById(battleId);
+		Battle battle = null;
+		if (battleOpt.isPresent()) {
+			battle = battleOpt.get();
+		}
+		return battle;
 	}
 
 	@Override
-	public Battle createBattle(Battle battle) {
-		// TODO Auto-generated method stub
-		return null;
+	public Battle createBattle(Integer battleId, Battle battle) {
+		Optional<Battle> battleOpt = battleresp.findById(battleId);
+			if (battleOpt.isPresent()) {
+				battle.setId(battleId);
+				battleresp.saveAndFlush(battle);
+				return battle;
+			}
+			return null;
 	}
+	@Override
+	public Battle updateBattle(int battleId, Battle battle) {
+	Optional<Battle> updateBattle = battleresp.findById(battleId);
+		
+		if(updateBattle.isPresent()) {
+			Battle update = updateBattle.get();
+			update.setWin(true);
+		    update.setKills(battleId);
+		    update.setMvpI(true);
+		    update.setMvpII(true);
+		    update.setMvpIII(true);
+		    update.setFirepower(battleId);
+			update.setCaptures(battleId);
+			update.setPoints(battleId);
+			
+			battleresp.save(update);
+			return update;
+			
+		} else {
+			
+			return null;
+		}
+		}
 
 	@Override
-	public Battle updateBattle(int BattleId, Battle battle) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public boolean deleteBattle(Integer battleId) {
 
-	@Override
-	public boolean deleteBattle(int battleId) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+			boolean deleted = false;
+			Optional<Battle> toDelete = battleresp.findById(battleId);
+			if(toDelete !=null) {	
+			battleresp.deleteById(battleId);;
+			deleted = true;
+			}
+			return deleted;
+		}
 
 }

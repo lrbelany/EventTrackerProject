@@ -41,9 +41,11 @@ class BattleTest {
 	}
 
 	@Test
-	void test() {
+	void test_of_entities() {
 		assertNotNull(bt);
-		assertEquals("paradise plaza", bt.getLocation());
+		assertEquals(7, bt.getKills());
+		assertEquals(20600, bt.getPoints());
 	}
 
-}
+	}
+

@@ -16,17 +16,40 @@ CREATE SCHEMA IF NOT EXISTS `battledb` DEFAULT CHARACTER SET utf8 ;
 USE `battledb` ;
 
 -- -----------------------------------------------------
+-- Table `arena`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `arena` ;
+
+CREATE TABLE IF NOT EXISTS `arena` (
+  `arenaid` INT NOT NULL AUTO_INCREMENT,
+  `arena` VARCHAR(45) NULL,
+  PRIMARY KEY (`arenaid`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
 -- Table `battle`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `battle` ;
 
 CREATE TABLE IF NOT EXISTS `battle` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `location` VARCHAR(45) NULL,
+  `kills` INT NULL,
   `win` TINYINT NULL,
-  `mvp` TINYINT NULL,
+  `mvpI` TINYINT NULL,
+  `mvpII` TINYINT NULL,
+  `mvpIII` TINYINT NULL,
   `points` INT NULL,
-  PRIMARY KEY (`id`))
+  `firepower` INT NULL,
+  `captures` INT NULL,
+  `arena_arenaid` INT NOT NULL,
+  PRIMARY KEY (`id`, `arena_arenaid`),
+  INDEX `fk_battle_arena1_idx` (`arena_arenaid` ASC),
+  CONSTRAINT `fk_battle_arena1`
+    FOREIGN KEY (`arena_arenaid`)
+    REFERENCES `arena` (`arenaid`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 SET SQL_MODE = '';
@@ -41,11 +64,26 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
+-- Data for table `arena`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `battledb`;
+INSERT INTO `arena` (`arenaid`, `arena`) VALUES (1, 'elon station gray');
+INSERT INTO `arena` (`arenaid`, `arena`) VALUES (2, 'patterson station');
+INSERT INTO `arena` (`arenaid`, `arena`) VALUES (3, 'imperial temple');
+INSERT INTO `arena` (`arenaid`, `arena`) VALUES (4, 'paradise plaza');
+INSERT INTO `arena` (`arenaid`, `arena`) VALUES (5, 'skyship 11');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `battle`
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `battledb`;
-INSERT INTO `battle` (`id`, `location`, `win`, `mvp`, `points`) VALUES (1, 'paradise plaza', NULL, NULL, NULL);
+INSERT INTO `battle` (`id`, `kills`, `win`, `mvpI`, `mvpII`, `mvpIII`, `points`, `firepower`, `captures`, `arena_arenaid`) VALUES (1, 7, 1, 0, 0, 0, 20600, 421962, 1, 3);
+INSERT INTO `battle` (`id`, `kills`, `win`, `mvpI`, `mvpII`, `mvpIII`, `points`, `firepower`, `captures`, `arena_arenaid`) VALUES (2, 10, 1, 1, 1, 0, 18300, 300345, 0, 2);
 
 COMMIT;
 
