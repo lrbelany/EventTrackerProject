@@ -8,7 +8,7 @@ public interface BattleService {
 
 	List<Battle> allBattles();
 	Battle findBattleById( int battleId);
-	Battle createBattle(Integer battleId, Battle battle);
+	Battle createBattle(Battle battle);
 	Battle updateBattle(int BattleId, Battle battle);
     boolean deleteBattle(Integer battleId);
 }

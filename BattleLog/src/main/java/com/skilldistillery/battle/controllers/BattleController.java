@@ -40,9 +40,9 @@ public class BattleController {
 		return battle;
 	}
 	@PostMapping("battles")
-	public Battle createBattle(@RequestBody Battle battle,Integer battleId, HttpServletResponse res, HttpServletRequest req) {
+	public Battle createBattle(@RequestBody Battle battle, HttpServletResponse res, HttpServletRequest req) {
 		try {
-			btsv.createBattle(battleId, battle);
+			btsv.createBattle(battle);
 			res.setStatus(201);
 			StringBuffer url = req.getRequestURL();
 			url.append("/").append(battle.getId());

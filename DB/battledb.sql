@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS `battle` (
   `points` INT NULL,
   `firepower` INT NULL,
   `captures` INT NULL,
-  `arena_arenaid` INT NOT NULL,
-  PRIMARY KEY (`id`, `arena_arenaid`),
+  `arena_arenaid` INT NULL,
+  PRIMARY KEY (`id`),
   INDEX `fk_battle_arena1_idx` (`arena_arenaid` ASC),
   CONSTRAINT `fk_battle_arena1`
     FOREIGN KEY (`arena_arenaid`)
