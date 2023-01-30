@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 
 
 @Entity
@@ -20,13 +19,13 @@ public class Battle {
 	private boolean win;
 	
 	
-	private boolean mvpI;
+	private boolean mvpsss;
 	
 
-	private boolean mvpII;
+	private boolean mvpss;
 	
 
-	private boolean mvpIII;
+	private boolean mvps;
 	
 	private int points;
 	
@@ -45,21 +44,19 @@ public class Battle {
 
 
 
-	public Battle(int id, int kills, boolean win, boolean mvpI, boolean mvpII, boolean mvpIII, int points,
+	public Battle(int id, int kills, boolean win, boolean mvpsss, boolean mvpss, boolean mvps, int points,
 			int firepower, int captures) {
 		super();
 		this.id = id;
 		this.kills = kills;
 		this.win = win;
-		this.mvpI = mvpI;
-		this.mvpII = mvpII;
-		this.mvpIII = mvpIII;
+		this.mvpsss = mvpsss;
+		this.mvpss = mvpss;
+		this.mvps = mvps;
 		this.points = points;
 		this.firepower = firepower;
 		this.captures = captures;
 	}
-
-
 
 	public int getId() {
 		return id;
@@ -97,38 +94,38 @@ public class Battle {
 
 
 
-	public boolean isMvpI() {
-		return mvpI;
+	public boolean isMvpsss() {
+		return mvpsss;
 	}
 
 
 
-	public void setMvpI(boolean mvpI) {
-		this.mvpI = mvpI;
+	public void setMvpsss(boolean mvpsss) {
+		this.mvpsss = mvpsss;
 	}
 
 
 
-	public boolean isMvpII() {
-		return mvpII;
+	public boolean isMvpss() {
+		return mvpss;
 	}
 
 
 
-	public void setMvpII(boolean mvpII) {
-		this.mvpII = mvpII;
+	public void setMvpss(boolean mvpss) {
+		this.mvpss = mvpss;
 	}
 
 
 
-	public boolean isMvpIII() {
-		return mvpIII;
+	public boolean isMvps() {
+		return mvps;
 	}
 
 
 
-	public void setMvpIII(boolean mvpIII) {
-		this.mvpIII = mvpIII;
+	public void setMvps(boolean mvps) {
+		this.mvps = mvps;
 	}
 
 
@@ -171,9 +168,8 @@ public class Battle {
 
 	@Override
 	public String toString() {
-		return "Battle [id=" + id + ", kills=" + kills + ", win=" + win + ", mvpI=" + mvpI + ", mvpII=" + mvpII
-				+ ", mvpIII=" + mvpIII + ", points=" + points + ", firepower=" + firepower + ", captures=" + captures
-				+ "]";
+		return "Battle [id=" + id + ", kills=" + kills + ", win=" + win + ", mvpsss=" + mvpsss + ", mvpss=" + mvpss
+				+ ", mvps=" + mvps + ", points=" + points + ", firepower=" + firepower + ", captures=" + captures + "]";
 	}
 
 

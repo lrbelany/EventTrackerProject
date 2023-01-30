@@ -46,9 +46,9 @@ public class BattleServiceImpl implements BattleService {
 			Battle update = updateBattle.get();
 			update.setWin(true);
 			update.setKills(battleId);
-			update.setMvpI(true);
-			update.setMvpII(true);
-			update.setMvpIII(true);
+			update.setMvpsss(true);
+			update.setMvpss(true);
+			update.setMvps(true);
 			update.setFirepower(battleId);
 			update.setCaptures(battleId);
 			update.setPoints(battleId);

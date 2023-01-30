@@ -45,6 +45,8 @@ class BattleTest {
 		assertNotNull(bt);
 		assertEquals(7, bt.getKills());
 		assertEquals(20600, bt.getPoints());
+		assertEquals(1, bt.getCaptures());
+	     
 	}
 
 	}

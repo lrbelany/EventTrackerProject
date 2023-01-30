@@ -14,26 +14,29 @@
  
  <form name="battleForm">
     <input type="number" name="battleId">
-    <button name="find">Get Battle by Id</button>
+    <button name="findBattle">Get Battle by Id</button>
+ </form>
   
 <br>
   <hr>
   <br>
   
   <h2>List Of Battles</h2>
- <div id="listOfBattlesDiv"></div><br>
+ <div id="showBattle"></div><br>
 
 <br>
+<div id="deleteBattleDiv">
+<input type="number" name="battleId">
 <button id="deleteBattleButton">Delete Battle</button>
- </form>
+ </div>
 
 <hr>
 <br>
 
 <h2>Add A Battle</h2>
 
-<div id="addBattleDiv">
-	<form id="addBattleForm">	
+
+	<form name="addBattleForm">	
 	<label for="kills">Kills: </label>
 	<input type="number" id="kills" name="kills"/><br>
 	
@@ -43,24 +46,24 @@
 	<label for="firePower">Fire Power: </label>
 	<input type="number" id="firePower" name="firePower"/><br>
 	
-	<label for="points">Points:: </label>
+	<label for="points">Points: </label>
 	<input type="number" id="points" name="points"/><br>
 	
 	<label for="win">Win: </label>
 	<input type="checkbox" id="win" name="win"/><br>
 	
-	<label for="mvpI">mvpI: </label>
-	<input type="checkbox" id="mvpI" name="mvpI" value="mvpI"/><br>
+	<label for="mvpsss">MVP SSS: </label>
+	<input type="checkbox" id="mvpsss" name="mvpsss" value="mvpsss"/><br>
 	
-	<label for="mvpII">mvpII: </label>
-	<input type="checkbox" id="mvpII" name="mvpII" value="mvpII"/><br>
+	<label for="mvpss">MVP SS: </label>
+	<input type="checkbox" id="mvpss" name="mvpss" value="mvpss"/><br>
 	
-	<label for="mvpIII">Win: </label>
-	<input type="checkbox" id="mvpIII" name="mvpIII" value="mvpIII"/><br>
+	<label for="mvpIII">MVP S: </label>
+	<input type="checkbox" id="mvps" name="mvps" value="mvps"/><br>
 
-	<button id="addBattleButton">Add Battle</button>
+	<button name="addBattleButton">Add Battle</button>
 	</form>
-</div><br>
+<br>
 
 <hr>
 <br>
@@ -68,8 +71,8 @@
 <h3>Edit Battle</h3>
 
 
-<div id="updateBattleDiv">
-	<form id="updateBattleForm">
+
+	<form name="updateBattleForm">
 	<input type="number" id="battleId" name="battleId" value="hidden" />
 	
 	<label for="kills">Kills: </label>
@@ -96,9 +99,8 @@
 	<label for="mvpIII">Win: </label>
 	<input type="checkbox" id="mvpIII" name="mvpIII" value="mvpIII"/><br>
 
-	<button id="updateBattleButton">Update Battle</button>
+	<button name="updateBattleButton">Update Battle</button>
 	</form>
-</div>
 
 
 

@@ -36,9 +36,9 @@ CREATE TABLE IF NOT EXISTS `battle` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `kills` INT NULL,
   `win` TINYINT NULL,
-  `mvpI` TINYINT NULL,
-  `mvpII` TINYINT NULL,
-  `mvpIII` TINYINT NULL,
+  `mvpsss` TINYINT NULL,
+  `mvpss` TINYINT NULL,
+  `mvps` TINYINT NULL,
   `points` INT NULL,
   `firepower` INT NULL,
   `captures` INT NULL,
@@ -82,8 +82,8 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `battledb`;
-INSERT INTO `battle` (`id`, `kills`, `win`, `mvpI`, `mvpII`, `mvpIII`, `points`, `firepower`, `captures`, `arena_arenaid`) VALUES (1, 7, 1, 0, 0, 0, 20600, 421962, 1, 3);
-INSERT INTO `battle` (`id`, `kills`, `win`, `mvpI`, `mvpII`, `mvpIII`, `points`, `firepower`, `captures`, `arena_arenaid`) VALUES (2, 10, 1, 1, 1, 0, 18300, 300345, 0, 2);
+INSERT INTO `battle` (`id`, `kills`, `win`, `mvpsss`, `mvpss`, `mvps`, `points`, `firepower`, `captures`, `arena_arenaid`) VALUES (1, 7, 1, 0, 0, 0, 20600, 421962, 1, 3);
+INSERT INTO `battle` (`id`, `kills`, `win`, `mvpsss`, `mvpss`, `mvps`, `points`, `firepower`, `captures`, `arena_arenaid`) VALUES (2, 10, 1, 1, 1, 0, 18300, 300345, 0, 2);
 
 COMMIT;
 
