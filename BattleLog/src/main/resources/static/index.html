@@ -6,7 +6,102 @@
 </head>
 <body>
 <script type="text/javascript" src="js/script.js"></script>
-<h1>BATTLE!!!!!</h1>
+<h1>Arena Battle Log</h1>
+
+<hr>
+<br>
+<br>
+ 
+ <form name="battleForm">
+    <input type="number" name="battleId">
+    <button name="find">Get Battle by Id</button>
+  
+<br>
+  <hr>
+  <br>
+  
+  <h2>List Of Battles</h2>
+ <div id="listOfBattlesDiv"></div><br>
+
+<br>
+<button id="deleteBattleButton">Delete Battle</button>
+ </form>
+
+<hr>
+<br>
+
+<h2>Add A Battle</h2>
+
+<div id="addBattleDiv">
+	<form id="addBattleForm">	
+	<label for="kills">Kills: </label>
+	<input type="number" id="kills" name="kills"/><br>
+	
+	<label for="captures">Captures: </label>
+	<input type="number" id="captures" name="captures"/><br>
+	
+	<label for="firePower">Fire Power: </label>
+	<input type="number" id="firePower" name="firePower"/><br>
+	
+	<label for="points">Points:: </label>
+	<input type="number" id="points" name="points"/><br>
+	
+	<label for="win">Win: </label>
+	<input type="checkbox" id="win" name="win"/><br>
+	
+	<label for="mvpI">mvpI: </label>
+	<input type="checkbox" id="mvpI" name="mvpI" value="mvpI"/><br>
+	
+	<label for="mvpII">mvpII: </label>
+	<input type="checkbox" id="mvpII" name="mvpII" value="mvpII"/><br>
+	
+	<label for="mvpIII">Win: </label>
+	<input type="checkbox" id="mvpIII" name="mvpIII" value="mvpIII"/><br>
+
+	<button id="addBattleButton">Add Battle</button>
+	</form>
+</div><br>
+
+<hr>
+<br>
+
+<h3>Edit Battle</h3>
+
+
+<div id="updateBattleDiv">
+	<form id="updateBattleForm">
+	<input type="number" id="battleId" name="battleId" value="hidden" />
+	
+	<label for="kills">Kills: </label>
+	<input type="number" id="kills" name="kills"/><br>
+	
+	<label for="captures">Captures: </label>
+	<input type="number" id="captures" name="captures"/><br>
+	
+	<label for="firePower">Fire Power: </label>
+	<input type="number" id="firePower" name="firePower"/><br>
+	
+	<label for="points">Points: </label>
+	<input type="number" id="points" name="points"/><br>
+	
+	<label for="win">Win: </label>
+	<input type="checkbox" id="win" name="win"/><br>
+	
+	<label for="mvpI">mvpI: </label>
+	<input type="checkbox" id="mvpI" name="mvpI" value="mvpI"/><br>
+	
+	<label for="mvpII">mvpII: </label>
+	<input type="checkbox" id="mvpII" name="mvpII" value="mvpII"/><br>
+	
+	<label for="mvpIII">Win: </label>
+	<input type="checkbox" id="mvpIII" name="mvpIII" value="mvpIII"/><br>
+
+	<button id="updateBattleButton">Update Battle</button>
+	</form>
+</div>
+
+
 
 </body>
+
 </html>
