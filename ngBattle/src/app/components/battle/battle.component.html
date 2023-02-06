@@ -1,0 +1,84 @@
+<h1>Arena Battles: {{getNumberOfBattles()}}</h1>
+<div id="battleList" *ngIf= "!selected">
+<table class="table table-striped table-bordered table-hover table-condensed">
+<thead>
+<th>Battle <br>No.</th>
+<th>Kills</th>
+<th>Win</th>
+<th>MVP SSS</th>
+<th>MVP SS</th>
+<th>MVP S</th>
+<th>Points</th>
+<th>Captures</th>
+</thead>
+
+<tbody>
+<tr  *ngFor="let battle of battles">
+  <td (click)="displayBattle(battle)">{{battle.id}} </td>
+  <!-- <td>{{battle.id}}</td> -->
+  <td>{{battle.kills}}</td>
+  <td>{{battle.win}}</td>
+  <td>{{battle.mvpsss}}</td>
+  <td>{{battle.mvpss}}</td>
+  <td>{{battle.mvps}}</td>
+  <td>{{battle.points}}</td>
+  <td>{{battle.captures}}</td>
+<td><button class="btn btn-danger" (click)="deleteBattle(battle.id)">X</button></td>
+</tr>
+</tbody>
+</table>
+
+  <!-- <input type="text" name="newBattle" for="id" [(ngModel)]="newBattle.id">
+<button class="btn btn-success" (click)="addBattle()">Add Battle No.</button> -->
+
+</div>
+
+<div id="battleDeets" *ngIf="selected && ! editBattle">
+<p> Id: {{selected.id}} </p>
+<p> Kills: {{selected.kills}} </p>
+<p>Win: {{selected.win}} </p>
+<p>MVP SSS: {{selected.mvpsss}} </p>
+<p>MVP SS: {{selected.mvpss}} </p>
+<p>MVP S: {{selected.mvps}} </p>
+<p>Points: {{selected.points}} </p>
+<p>Captures: {{selected.captures}} </p>
+<button class="btn btn-warning" (click)="displayTable()"> Back </button>
+<button class="btn btn-outline btn-danger" (click)="setEditBattle()">Edit Battle</button>
+</div>
+
+<div id="edit" *ngIf="editBattle">
+  Kills:
+  <input type="text" name="editBattle.battle" [(ngModel)]="editBattle.kills">
+  <br>
+Points:
+<input type="text" name="editBattle.battle" [(ngModel)]="editBattle.points">
+<br>
+Captures:
+<input type="text" name="editBattle.battle" [(ngModel)]="editBattle.captures">
+<br>
+<br>
+<div><ul>
+<li>
+  Win:
+<input type="checkbox" name="editBattle.win" [(ngModel)]="editBattle.win">
+</li>
+<br>
+<li>
+MVP Tier SSS:
+<input type="radio" name="editBattle.mvpsss" [(ngModel)]="editBattle.mvpsss">
+</li>
+<br>
+<li>
+MVP Tier SS:
+<input type="radio" name="editBattle.mvpss" [(ngModel)]="editBattle.mvpss">
+</li>
+<br>
+<li>
+MVP Tier S:
+<input type="radio" name="editBattle.mvps" [(ngModel)]="editBattle.mvps">
+</li>
+<br>
+<button class="btn btn-danger" (click)="editBattle = null">cancel</button>
+<button class="btn btn-info" (click)="updateBattle(editBattle)">save</button>
+</ul>
+</div>
