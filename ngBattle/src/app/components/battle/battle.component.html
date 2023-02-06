@@ -26,10 +26,12 @@
 <td><button class="btn btn-danger" (click)="deleteBattle(battle.id)">X</button></td>
 </tr>
 </tbody>
+<div *ngIf="newBattle">
+<input type="text" name="newBattle" [(ngModel)]="newBattle.id">
+<button class="btn btn-success" (click)="addBattle(newBattle)">Add Battle No.</button>
+</div>
 </table>
 
-  <!-- <input type="text" name="newBattle" for="id" [(ngModel)]="newBattle.id">
-<button class="btn btn-success" (click)="addBattle()">Add Battle No.</button> -->
 
 </div>
 
